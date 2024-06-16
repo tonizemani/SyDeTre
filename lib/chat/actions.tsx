@@ -1,4 +1,5 @@
 import 'server-only'
+import { LanguageModelV1 } from '@ai-sdk/provider';
 
 import {
   createAI,
@@ -113,9 +114,10 @@ async function submitUserMessage(content: string) {
 
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
+  const model = mistral('ft:open-mistral-7b:1b8e4d68:20240615:677d3e2e') as unknown as LanguageModelV1;
 
   const result = await streamUI({
-    model: mistral('ft:open-mistral-7b:1b8e4d68:20240615:677d3e2e'),
+    model: model,
     initial: <SpinnerMessage />,
     system: `\
     You are SyDeTre, an AI companion that helps others recognize their symptoms, provide possible diseases
