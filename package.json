@@ -13,7 +13,6 @@
     "format:check": "prettier --check \"{app,lib,components}**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
-    "@ai-sdk/provider": "0.0.10",
     "@ai-sdk/mistral": "^0.0.17",
     "@ai-sdk/openai": "^0.0.9",
     "@radix-ui/react-alert-dialog": "^1.0.5",
